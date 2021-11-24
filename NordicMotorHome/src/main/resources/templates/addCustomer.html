@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>add customer</title>
+</head>
+
+<div th:replace="header">...</div>
+
+<body2>
+
+    <form action="#" th:action="@{/addCustomer}" th:object="${customer}" method="post">
+        <p>First Name: <input type="text" th:field="*{firstName}" required/></p>
+        <p>Last Name: <input type="text" th:field="*{lastName}" required/></p>
+        <p>Age: <input type="date" th:field="*{birthday}" required/></p>
+        <p>Email: <input type="text" th:field="*{email}" required/></p>
+        <p>Zip Code: <input type="number" th:field="*{zipCode}" required/></p>
+        <p>Adress:<input type="text" th:field="*{adress}" required/></p>
+        <p>Phonenumber: <input type="number" th:field="*{phonenumber}" required/></p>
+
+
+        <input type="submit" value="Add" class="btn add2"/>
+    </form>
+    </div>
+</body2>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete student</title>
+</head>
+
+<div th:replace="header">...</div>
+
+<body>
+
+<h1>Delete Customer
+    <td th:text="${customer.firstName}"></td>
+    <td th:text="${customer.lastName}"></td>
+</h1>
+
+<form action="#" th:action="@{/verifyDelete}" method="post">
+    <input type="hidden" th:field="${customer.id}"/>
+    <input type="submit" value="Yes" class="btn btn-create"/>
+</form>
+
+<button onclick="window.location.href = 'http://localhost:9200/delete';">No</button>
+
+
+</body>
+</html>

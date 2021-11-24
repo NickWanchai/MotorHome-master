@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>customers</title>
+</head>
+
+<div th:replace="header">...</div>
+
+<body>
+
+<table class="tables" align="center">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>birthday</th>
+        <th>email</th>
+        <th>zipCode</th>
+        <th>adress</th>
+        <th>phonenumber</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="customer: ${customers}">
+        <!--/*@thymesVar id="studentId" type=""*/-->
+        <td th:text="${customer.getId()}"></td>
+        <td th:text="${customer.getFirstName()}"></td>
+        <td th:text="${customer.getLastName()}"></td>
+        <td th:text="${customer.getBirthday()}"/><!-- https://www.baeldung.com/dates-in-thymeleaf -->
+        <td th:text="${customer.getEmail()}"></td>
+        <td th:text="${customer.getZipCode()}"></td>
+        <td th:text="${customer.getAdress()}"></td>
+        <td th:text="${customer.getPhonenumber()}"></td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+</body>
+</html>

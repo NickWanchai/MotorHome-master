@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Autocamper</title>
+</head>
+
+<div th:replace="header">...</div>
+
+<body>
+
+<table class="tables" align="center">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Model</th>
+        <th>Brand</th>
+        <th>Capacity</th>
+        <th>Manufacturing year</th>
+        <th>Rental price
+        <th>Fueltype</th>
+        <th>TowHitch</th>
+
+
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="autocamper: ${autocampers}">
+        <td th:text="${autocamper.getId()}"></td>
+        <td th:text="${autocamper.getModel()}"></td>
+        <td th:text="${autocamper.getBrand()}"></td>
+        <td th:text="${autocamper.getCapacity()}"></td>
+        <td th:text="${autocamper.getManufacturingYear()}"></td>
+        <td th:text="${autocamper.getRentalPrice()}"></td>
+        <td th:text="${autocamper.getFuelType()}"></td>
+        <td th:text="${autocamper.getTowHitch()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

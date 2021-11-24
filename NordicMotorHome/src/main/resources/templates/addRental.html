@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <title>add rental</title>
+</head>
+
+<div th:replace="header">...</div>
+
+<link rel="stylesheet" href="stylesheet.css">
+
+<body>
+<div class="row">
+
+
+    <!-- nr1-->
+    <div class="column">
+        <h2>Autocampers</h2>
+        <table class="tables" align="center">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Model</th>
+                <th>Brand</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr th:each="autocamper: ${autocampers}">
+                <td th:text="${autocamper.getId()}"></td>
+                <td th:text="${autocamper.getModel()}"></td>
+                <td th:text="${autocamper.getBrand()}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- nr2-->
+    <div class="column">
+
+        <h2>Rent here</h2>
+
+        <form action="#" th:action="@{/addRental}" th:object="${rental}" method="post">
+
+            <p>Customer id: <input type="number" th:field="*{customerId}" required/></p>
+            <p>Autocamper id: <input type="number" th:field="*{autocamperId}" required/></p>
+            <p>Date of rent: <input type="date" th:field="*{dateOfRent}" required/></p>
+
+            <input type="submit" value="Add" class="btn btn-create"/>
+        </form>
+
+    </div>
+
+
+    <!-- nr3-->
+    <div class="column">
+        <h2>Customers</h2>
+
+        <table class="tables" align="center">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr th:each="customer: ${customers}">
+                <!--/*@thymesVar id="studentId" type=""*/-->
+                <td th:text="${customer.getId()}"></td>
+                <td th:text="${customer.getFirstName()}"></td>
+                <td th:text="${customer.getLastName()}"></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
+

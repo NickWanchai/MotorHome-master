@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rentals</title>
+
+</head>
+
+<div th:replace="header">...</div>
+
+<body>
+<table class="tables" , align="center">
+    <thead>
+    <tr>
+        <th>Rental id</th>
+        <th>Customer id</th>
+        <th>Autocamper id</th>
+        <th>Date of rent</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="rental: ${rentals}">
+
+        <td th:text="${rental.getRentalId()}"></td>
+        <td th:text="${rental.getCustomerId()}"></td>
+        <td th:text="${rental.getAutocamperId()}"></td>
+        <td th:text="${rental.getDateOfRent()}"></td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
